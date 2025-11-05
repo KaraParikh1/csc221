@@ -1,5 +1,8 @@
-def find(str, ch, start=0, end=0):
-    end = len(str)
+def find(str, ch, start=0, end=0.5):
+    if type(end) == float:
+        end = len(str)
+    else:
+        pass
     index = start
     while index < end:
         if str[index] == ch:
@@ -7,6 +10,4 @@ def find(str, ch, start=0, end=0):
         index = index + 1
     return -1
 
-
-
-#at beginning of function, use len() of string to add value to end parameter
+print(find("worddddd", "d"))
