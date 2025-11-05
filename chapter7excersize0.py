@@ -1,4 +1,4 @@
-def find(str, ch, start=0):
+def find(str, ch, start=0, end=0):
     index = start
     while index < len(str):
         if str[index] == ch:
