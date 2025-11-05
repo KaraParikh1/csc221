@@ -11,4 +11,3 @@ def find(str, ch, start=0, end=0.5):
         index = index + 1
     return -1
 
-print(find("worddddd", "d"))
