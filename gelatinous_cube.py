@@ -55,6 +55,7 @@ class GelCube:
       dt = datetime.now()
       self.victims.append(victim)
       self.absorbtion_times.append(dt.timestamp())
+      print(f"The gelatinous cube {self.name} has absorbed {victim}.")
   def burn(self):
     for v in self.victims:
       victim.take_damage(v, 100)
