@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 """
   >>> dave = GelCube("dave", 2)
   >>> print(dave.hp)
@@ -28,7 +28,7 @@ import datetime
   1100
   >>> garry = victim("garry")
   >>> dave.absorb(garry)
-  cannot absorb more victims
+  cannot absorb more victims at this time
   >>> print(dave.victims)
   [bob, jerry]
   >>> print(dave.is_absorbed(jerry))
@@ -51,12 +51,12 @@ class GelCube:
     self.hp -= damage
   
   def absorb(self, victim):
-    if can_absorb():
+    if self.can_absorb():
       dt = datetime.now()
       self.victims.append(victim)
       self.absorbtion_times.append(dt.timestamp())
     else:
-      print('cannot absorb more victims')
+      print('cannot absorb more victims at this time')
   def burn(self):
     for v in self.victims:
       victim.take_damage(v, 100)
@@ -79,8 +79,16 @@ class GelCube:
   
   def can_absorb(self):
     dt = datetime.now()
-    if len (self.victims) < self.size and dt.timestamp()-self.absorbtion_times(len(self.absorbtion_times)) >= 60:
-      return True
+    if len (self.victims) < self.size:
+      if len(self.absorbtion_times) >= 1:
+        print(len(self.absorbtion_times), )
+        if dt.timestamp()-self.absorbtion_times[len(self.absorbtion_times)-1] >= 60:
+          return True
+        else:
+          return False
+      else:
+        return True
+      
 
 
 
@@ -103,3 +111,13 @@ if __name__ == '__main__':
     import doctest
     doctest.testmod()
 
+dave = GelCube("dave",2)
+bob = victim("bob")
+joe = victim("joe")
+yn = "yes"
+while yn == "yes":
+  yn = input("Do you want to absorb someone: ")
+  if yn == "yes" and not dave.is_absorbed(bob):
+    dave.absorb(bob)
+  else:
+    dave.absorb(joe)
