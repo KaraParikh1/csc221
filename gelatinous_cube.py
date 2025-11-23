@@ -72,6 +72,10 @@ class GelCube:
       return True
     else:
       return False
+  
+  def can_absorb():
+    pass
+  #tests if a new victim can be absorbed if it has been a minute since the last absorption
 
 
 
