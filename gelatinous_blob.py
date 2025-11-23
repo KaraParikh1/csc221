@@ -62,7 +62,8 @@ class GelCube:
     if self.hp <= 0:
       dave.die()
       
-#die: deletes instance of gelatinous_blob and makes a print statement announcing it
+def die(self):
+  del self
       
 #is_absorbed: checks if victim has been absorbed
 
