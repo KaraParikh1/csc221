@@ -56,6 +56,9 @@ class GelCube:
 class victim:
   def __init__ (self):
     self.hp = 1200
+
+  def __repr__(self):
+      return self.__str__()
   
   def take_damage(self, damage):
     self.hp -= damage
