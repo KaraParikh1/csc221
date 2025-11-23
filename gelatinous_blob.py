@@ -30,7 +30,11 @@
   cannot absorb more victims
   >>> print(dave.victims)
   [bob, jerry]
-
+  >>> print(dave.is_absorbed(jerry))
+  True
+  >>> dave.hp = 100
+  >>> dave.get_kicked()
+  The gelatinous blob dave has been slain.
 """
 
 
@@ -51,6 +55,12 @@ class GelCube:
   def burn(self):
     for v in self.victims:
       victim.take_damage(v, 100)
+  
+#get_kicked: gets kicked for each character that has been absorbed
+      
+#die: deletes instance of gelatinous_blob and makes a print statement announcing it
+      
+#is_absorbed: checks if victim has been absorbed
 
 
 class victim:
