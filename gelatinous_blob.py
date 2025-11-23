@@ -5,8 +5,8 @@
   >>> dave.take_damage(199)
   >>> print(dave.hp)
   999999999999999999999999999800
-  >>> bob = victim(self,bob)
-  >>> jerry = victim(self, jerry)
+  >>> bob = victim("bob")
+  >>> jerry = victim("jerry")
   >>> print(bob.hp)
   1200
   >>> print(jerry.hp)
@@ -25,7 +25,7 @@
   1000
   >>> print(jerry.hp)
   1100
-  >>> garry = victim(self,garry)
+  >>> garry = victim("garry")
   >>> dave.absorb(garry)
   cannot absorb more victims
   >>> print(dave.victims)
@@ -56,10 +56,11 @@ class GelCube:
 class victim:
   def __init__ (self, name):
     self.hp = 1200
-    self.name = self
+    self.name = name
 
-  def __repr__(self):
-      return self.name
+  def __str__(self):
+      return str(self.name)
+      
   
   def take_damage(self, damage):
     self.hp -= damage
