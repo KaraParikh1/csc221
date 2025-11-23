@@ -1,4 +1,3 @@
-import 
 """
   >>> dave = GelCube("dave", 2)
   >>> print(dave.hp)
@@ -35,7 +34,7 @@ import
   True
   >>> dave.hp = 100
   >>> dave.get_kicked()
-  The gelatinous blob dave has been slain.
+  The gelatinous cube dave has been slain.
 """
 
 
@@ -65,7 +64,7 @@ class GelCube:
       self.die()
       
   def die(self):
-    print(f"The gelatinous blob {self.name} has been slain.")
+    print(f"The gelatinous cube {self.name} has been slain.")
     del self
         
   def is_absorbed(self, victim):
