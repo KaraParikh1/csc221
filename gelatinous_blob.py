@@ -50,7 +50,7 @@ class GelCube:
       print('cannot absorb more victims')
   def burn(self):
     for v in self.victims:
-      v.take_damage(v, 100)
+      victim.take_damage(v, 100)
 
 
 class victim:
