@@ -56,7 +56,11 @@ class GelCube:
     for v in self.victims:
       victim.take_damage(v, 100)
   
-#get_kicked: gets kicked for each character that has been absorbed
+  def get_kicked(self):
+    for v in self.victims:
+      self.hp -= 100
+    if self.hp <= 0:
+      dave.die()
       
 #die: deletes instance of gelatinous_blob and makes a print statement announcing it
       
