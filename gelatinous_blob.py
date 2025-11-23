@@ -61,6 +61,8 @@ class victim:
   def __str__(self):
       return str(self.name)
       
+  def __repr__(self):
+    return str(self.name)
   
   def take_damage(self, damage):
     self.hp -= damage
