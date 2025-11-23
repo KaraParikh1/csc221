@@ -13,13 +13,13 @@
   1200
   >>> dave.absorb(bob)
   >>> print(dave.victims)
-  [dave]
+  [bob]
   >>> dave.burn()
   >>> print(bob.hp)
   1100
   >>> dave.absorb(jerry)
   >>> print(dave.victims)
-  [dave, jerry]
+  [bob, jerry]
   >>> dave.burn()
   >>> print(bob.hp)
   1000
@@ -29,7 +29,7 @@
   >>> dave.absorb(garry)
   'cannot absorb more victims'
   >>> print(dave.victims)
-  [dave, jerry]
+  [bob, jerry]
 
 """
 
