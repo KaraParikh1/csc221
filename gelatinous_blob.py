@@ -27,7 +27,7 @@
   1100
   >>> garry = victim()
   >>> dave.absorb(garry)
-  'cannot absorb more victims'
+  cannot absorb more victims
   >>> print(dave.victims)
   [bob, jerry]
 
@@ -48,6 +48,9 @@ class GelCube:
       self.victims.append(victim)
     else:
       print('cannot absorb more victims')
+  def burn(self):
+    for v in self.victims:
+      v.take_damage(v, 100)
 
 
 class victim:
@@ -61,3 +64,4 @@ class victim:
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
+
