@@ -1,3 +1,4 @@
+import datetime
 """
   >>> dave = GelCube("dave", 2)
   >>> print(dave.hp)
@@ -44,13 +45,16 @@ class GelCube:
     self.size = size
     self.victims = []
     self.name = name
+    self.absorbtion_times = []
   
   def take_damage(self, damage):
     self.hp -= damage
   
   def absorb(self, victim):
-    if len (self.victims) < 2:
+    if len (self.victims) < self.size:
+      dt = datetime.now()
       self.victims.append(victim)
+      self.absorbtion_times.append(dt.timestamp())
     else:
       print('cannot absorb more victims')
   def burn(self):
@@ -73,9 +77,10 @@ class GelCube:
     else:
       return False
   
-  def can_absorb():
-    pass
-  #tests if a new victim can be absorbed if it has been a minute since the last absorption
+  def can_absorb(self):
+    dt = datetime.now()
+    if len (self.victims) < self.size and dt.timestamp()-self.absorbtion_times(len(self.absorbtion_times)) >= 60:
+      return True
 
 
 
