@@ -1,5 +1,5 @@
 """
-  >>> dave = GelCube(2)
+  >>> dave = GelCube("dave", 2)
   >>> print(dave.hp)
   999999999999999999999999999999
   >>> dave.take_damage(199)
@@ -39,10 +39,11 @@
 
 
 class GelCube:
-  def __init__ (self, size = 1):
+  def __init__ (self, name, size = 1):
     self.hp = 999999999999999999999999999999
     self.size = size
     self.victims = []
+    self.name = name
   
   def take_damage(self, damage):
     self.hp -= damage
@@ -63,6 +64,7 @@ class GelCube:
       self.die()
       
   def die(self):
+    print(f"The gelatinous blob {self.name} has been slain.")
     del self
         
   def is_absorbed(self, victim):
