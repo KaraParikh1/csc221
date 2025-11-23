@@ -55,8 +55,6 @@ class GelCube:
       dt = datetime.now()
       self.victims.append(victim)
       self.absorbtion_times.append(dt.timestamp())
-    else:
-      print('cannot absorb more victims at this time')
   def burn(self):
     for v in self.victims:
       victim.take_damage(v, 100)
@@ -81,13 +79,15 @@ class GelCube:
     dt = datetime.now()
     if len (self.victims) < self.size:
       if len(self.absorbtion_times) >= 1:
-        print(len(self.absorbtion_times), )
         if dt.timestamp()-self.absorbtion_times[len(self.absorbtion_times)-1] >= 60:
           return True
         else:
+          print("you must wait 1 minute between absorptions")
           return False
       else:
         return True
+    else:
+      print("you are full of people")
       
 
 
