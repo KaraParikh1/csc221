@@ -60,16 +60,16 @@ class GelCube:
     for v in self.victims:
       self.hp -= 100
     if self.hp <= 0:
-      dave.die()
+      self.die()
       
-def die(self):
-  del self
-      
-def is_absorbed(self, victim):
-  if victim in self.victims:
-    return True
-  else:
-    return False
+  def die(self):
+    del self
+        
+  def is_absorbed(self, victim):
+    if victim in self.victims:
+      return True
+    else:
+      return False
 
 
 class victim:
