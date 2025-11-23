@@ -65,7 +65,11 @@ class GelCube:
 def die(self):
   del self
       
-#is_absorbed: checks if victim has been absorbed
+def is_absorbed(self, victim):
+  if victim in self.victims:
+    return True
+  else:
+    return False
 
 
 class victim:
