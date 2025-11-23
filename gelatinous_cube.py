@@ -51,7 +51,7 @@ class GelCube:
     self.hp -= damage
   
   def absorb(self, victim):
-    if len (self.victims) < self.size:
+    if can_absorb():
       dt = datetime.now()
       self.victims.append(victim)
       self.absorbtion_times.append(dt.timestamp())
